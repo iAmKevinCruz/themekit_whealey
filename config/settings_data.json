@@ -1,0 +1,566 @@
+{
+  "current": {
+    "heading_color": "#434a47",
+    "text_color": "#353535",
+    "text_light_color": "#454545",
+    "link_color": "#6a6a6a",
+    "background": "#f4f3f1",
+    "light_background": "#f4f3f1",
+    "product_on_sale_color": "#353535",
+    "button_background": "#353535",
+    "button_text_color": "#ffffff",
+    "header_background": "#f4f3f1",
+    "header_heading_color": "#353535",
+    "header_light_color": "#979797",
+    "footer_background": "#e1dfdc",
+    "footer_heading_color": "#353535",
+    "footer_text_color": "#353535",
+    "navigation_background": "#434a47",
+    "navigation_text_color": "#ffffff",
+    "newsletter_popup_background": "#434a47",
+    "newsletter_popup_text_color": "#ffffff",
+    "secondary_elements_background": "#353535",
+    "secondary_elements_text_color": "#ffffff",
+    "product_rating_color": "#434a47",
+    "heading_font": "montserrat_n4",
+    "heading_size": "small",
+    "uppercase_heading": true,
+    "text_font": "nunito_n4",
+    "base_text_font_size": 13,
+    "color_swatch_config": "Atacama 5801: Atacama5801.png",
+    "show_page_transition": false,
+    "show_button_transition": false,
+    "show_image_zooming": false,
+    "show_element_staggering": false,
+    "search_mode": "product,article",
+    "product_show_price_on_hover": false,
+    "product_show_secondary_image": true,
+    "product_info_alignment": "center",
+    "product_image_size": "natural",
+    "product_list_horizontal_spacing": "small",
+    "product_list_vertical_spacing": "small",
+    "cart_type": "drawer",
+    "cart_enable_notes": true,
+    "cart_show_free_shipping_threshold": false,
+    "cart_free_shipping_threshold": "50",
+    "social_instagram": "https:\/\/instagram.com\/whearleyandco",
+    "favicon": "shopify:\/\/shop_images\/Low-Res_Sublogo-Black.png",
+    "checkout_logo_position": "center",
+    "checkout_logo_size": "small",
+    "checkout_body_background_color": "#ffffff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_color": "#efefef",
+    "checkout_accent_color": "#1c1b1b",
+    "checkout_button_color": "#1c1b1b",
+    "sections": {
+      "sidebar-menu": {
+        "type": "sidebar-menu",
+        "settings": {
+          "primary_menu": "main-menu",
+          "secondary_menu": "",
+          "show_social_media": true
+        }
+      },
+      "announcement": {
+        "type": "announcement",
+        "settings": {
+          "enable_bar": true,
+          "home_page_only": false,
+          "background": "#434a47",
+          "text_color": "#ffffff",
+          "content": "Announce something here",
+          "link": ""
+        }
+      },
+      "header": {
+        "type": "header",
+        "blocks": {
+          "5a8628b3-63b3-4a0a-8456-bcb7a4ba3456": {
+            "type": "mega_menu",
+            "settings": {
+              "navigation_mega_menu": "Pillows & Decor",
+              "push_1_image": "shopify:\/\/shop_images\/EdgewoodFinalWeb-1031.jpg",
+              "push_1_heading": "",
+              "push_1_subheading": "",
+              "push_1_url": "shopify:\/\/collections\/pillow",
+              "push_2_image": "shopify:\/\/shop_images\/WCOFilm-119.jpg",
+              "push_2_heading": "Example heading",
+              "push_2_subheading": "Example sub-heading",
+              "push_2_url": ""
+            }
+          },
+          "531c70e0-a3e3-42a9-9c06-10ae2540e53b": {
+            "type": "mega_menu",
+            "settings": {
+              "navigation_mega_menu": "Bed & Bath",
+              "push_1_image": "shopify:\/\/shop_images\/EdgewoodFinalWeb-1007.jpg",
+              "push_1_heading": "Example heading",
+              "push_1_subheading": "Example sub-heading",
+              "push_1_url": "",
+              "push_2_image": "shopify:\/\/shop_images\/WCOFilm-123_1c54488f-d14b-4d18-b42f-c984f2ec79de.jpg",
+              "push_2_heading": "Example heading",
+              "push_2_subheading": "Example sub-heading",
+              "push_2_url": ""
+            }
+          },
+          "a837d879-faca-4ba8-b7f8-19846e9ccb0f": {
+            "type": "mega_menu",
+            "settings": {
+              "navigation_mega_menu": "Kitchen & Dining",
+              "push_1_image": "shopify:\/\/shop_images\/WCOFilm-123.jpg",
+              "push_1_heading": "Example heading",
+              "push_1_subheading": "Example sub-heading",
+              "push_1_url": "",
+              "push_2_image": "shopify:\/\/shop_images\/WhearleyCo-1.jpg",
+              "push_2_heading": "Example heading",
+              "push_2_subheading": "Example sub-heading",
+              "push_2_url": ""
+            }
+          },
+          "dacf27da-1d6b-4eec-8ebc-0f5f0feae7c9": {
+            "type": "mega_menu",
+            "settings": {
+              "navigation_mega_menu": "Garden & Utility",
+              "push_1_image": "shopify:\/\/shop_images\/WCOFilm-119.jpg",
+              "push_1_heading": "Example heading",
+              "push_1_subheading": "Example sub-heading",
+              "push_1_url": "",
+              "push_2_image": "shopify:\/\/shop_images\/EdgewoodFinalWeb-1031.jpg",
+              "push_2_heading": "Example heading",
+              "push_2_subheading": "Example sub-heading",
+              "push_2_url": ""
+            }
+          },
+          "df40e371-2658-418b-9fbf-4aa84fcf2941": {
+            "type": "mega_menu",
+            "settings": {
+              "navigation_mega_menu": "Paint & Wallpaper",
+              "push_1_image": "shopify:\/\/shop_images\/WhearleyCo-7.jpg",
+              "push_1_heading": "Example heading",
+              "push_1_subheading": "Example sub-heading",
+              "push_1_url": "",
+              "push_2_image": "shopify:\/\/shop_images\/WCOFilm-123_1c54488f-d14b-4d18-b42f-c984f2ec79de.jpg",
+              "push_2_heading": "Example heading",
+              "push_2_subheading": "Example sub-heading",
+              "push_2_url": ""
+            }
+          }
+        },
+        "block_order": [
+          "5a8628b3-63b3-4a0a-8456-bcb7a4ba3456",
+          "531c70e0-a3e3-42a9-9c06-10ae2540e53b",
+          "a837d879-faca-4ba8-b7f8-19846e9ccb0f",
+          "dacf27da-1d6b-4eec-8ebc-0f5f0feae7c9",
+          "df40e371-2658-418b-9fbf-4aa84fcf2941"
+        ],
+        "settings": {
+          "use_sticky_header": true,
+          "logo": "shopify:\/\/shop_images\/General_Whearley_Co-Logo-Black2_1b900bb2-9fad-4d4a-8fdd-83a79209a557.png",
+          "logo_max_width": 250,
+          "mobile_logo_max_width": 150,
+          "show_country_selector": false,
+          "show_locale_selector": true,
+          "navigation_menu": "main-menu",
+          "navigation_style": "inline",
+          "show_icons": false,
+          "enable_transparent_header": true,
+          "enable_transparent_header_collection": false,
+          "show_transparent_header_border": true,
+          "transparent_text_color": "#ffffff"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "footer-0": {
+            "type": "text",
+            "settings": {
+              "title": "About the shop",
+              "content": "<p>Whearley and Co. is a boutique real estate brokerage and interiors shop serving clients throughout the Bay Area.  We are a close knit team, lead by Cliff and Natalie Whearley, with shared expertise in real estate and a love for timeless design. We're united by our passion for layered, warm spaces and our dedication to the beauty of everyday living.<\/p>",
+              "show_social_media": true
+            }
+          },
+          "footer-1": {
+            "type": "links",
+            "settings": {
+              "menu": "footer"
+            }
+          },
+          "footer-2": {
+            "type": "newsletter",
+            "settings": {
+              "title": "Newsletter",
+              "content": "<p>Subscribe to receive updates, access to exclusive deals, and more.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "footer-0",
+          "footer-1",
+          "footer-2"
+        ],
+        "settings": {
+          "show_payment_methods": true,
+          "show_country_selector": true,
+          "show_locale_selector": true
+        }
+      },
+      "popup": {
+        "type": "popup",
+        "settings": {
+          "show_popup": true,
+          "show_only_on_index": true,
+          "show_only_for_visitors": true,
+          "show_only_once": true,
+          "title": "Welcome",
+          "content": "<p>Sign up for 10% off your first purchase. And get updates on new collections and events. <\/p>",
+          "show_newsletter": true,
+          "apparition_delay": 5
+        }
+      }
+    },
+    "content_for_index": [],
+    "blocks": {
+      "12589940062836651512": {
+        "type": "shopify:\/\/apps\/back-in-stock-restock-alerts\/blocks\/app-embed\/f9b8be85-a2cb-4a08-bbf7-00616585fc16",
+        "disabled": false,
+        "settings": {}
+      },
+      "10042746950867549768": {
+        "type": "shopify:\/\/apps\/hulk-product-options\/blocks\/app-embed\/380168ef-9475-4244-a291-f66b189208b5",
+        "disabled": false,
+        "settings": {}
+      }
+    }
+  },
+  "presets": {
+    "Allure": {
+      "heading_color": "#1c1b1b",
+      "text_color": "#1c1b1b",
+      "text_light_color": "#6a6a6a",
+      "link_color": "#6a6a6a",
+      "background": "#efefef",
+      "light_background": "#ffffff",
+      "product_on_sale_color": "#f94c43",
+      "button_background": "#1c1b1b",
+      "button_text_color": "#ffffff",
+      "header_background": "#ffffff",
+      "header_heading_color": "#1c1b1b",
+      "header_light_color": "#6a6a6a",
+      "footer_background": "#ffffff",
+      "footer_heading_color": "#1c1b1b",
+      "footer_text_color": "#6a6a6a",
+      "newsletter_popup_background": "#1c1b1b",
+      "newsletter_popup_text_color": "#ffffff",
+      "secondary_elements_background": "#1c1b1b",
+      "secondary_elements_text_color": "#ffffff",
+      "navigation_background": "#1c1b1b",
+      "navigation_text_color": "#ffffff",
+      "heading_font": "montserrat_n5",
+      "heading_size": "small",
+      "uppercase_heading": true,
+      "text_font": "nunito_sans_n4",
+      "base_text_font_size": 14,
+      "show_page_transition": false,
+      "search_mode": "product,article",
+      "product_show_price_on_hover": false,
+      "product_show_secondary_image": false,
+      "product_info_alignment": "center",
+      "product_image_size": "natural",
+      "product_list_horizontal_spacing": "medium",
+      "product_list_vertical_spacing": "small",
+      "cart_type": "drawer",
+      "cart_enable_notes": true,
+      "cart_show_free_shipping_threshold": false,
+      "cart_free_shipping_threshold": "50",
+      "checkout_logo_position": "center",
+      "checkout_logo_size": "small",
+      "checkout_body_background_color": "#ffffff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_color": "#efefef",
+      "checkout_accent_color": "#1c1b1b",
+      "checkout_button_color": "#1c1b1b",
+      "sections": {
+        "sidebar-menu": {
+          "type": "sidebar-menu",
+          "settings": {
+            "primary_menu": "main-menu",
+            "show_social_media": true
+          }
+        },
+        "announcement": {
+          "type": "announcement",
+          "settings": {
+            "background": "#000000",
+            "text_color": "#ffffff",
+            "content": "Announce something here"
+          }
+        },
+        "header": {
+          "type": "header",
+          "settings": {
+            "use_sticky_header": true,
+            "logo_max_width": 140,
+            "navigation_menu": "main-menu",
+            "navigation_style": "inline",
+            "enable_transparent_header": true,
+            "transparent_text_color": "#ffffff"
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "footer-0": {
+              "type": "text",
+              "settings": {
+                "title": "About the shop",
+                "content": "<p>Use this text area to tell your customers about your brand and vision. You can change it in the theme settings.<\/p>",
+                "show_social_media": true
+              }
+            },
+            "footer-1": {
+              "type": "links",
+              "settings": {
+                "menu": "footer"
+              }
+            },
+            "footer-2": {
+              "type": "newsletter",
+              "settings": {
+                "title": "Newsletter",
+                "content": "<p>Subscribe to receive updates, access to exclusive deals, and more.<\/p>"
+              }
+            }
+          },
+          "block_order": [
+            "footer-0",
+            "footer-1",
+            "footer-2"
+          ],
+          "settings": {
+            "show_payment_methods": true
+          }
+        }
+      }
+    },
+    "Couture": {
+      "heading_color": "#5c5c5c",
+      "text_color": "#5c5c5c",
+      "text_light_color": "#939393",
+      "link_color": "#323232",
+      "background": "#ffffff",
+      "light_background": "#ffffff",
+      "product_on_sale_color": "#f94c43",
+      "button_background": "#5c5c5c",
+      "button_text_color": "#ffffff",
+      "header_background": "#ffffff",
+      "header_heading_color": "#5c5c5c",
+      "header_light_color": "#939393",
+      "footer_background": "#ffffff",
+      "footer_heading_color": "#5c5c5c",
+      "footer_text_color": "#939393",
+      "newsletter_popup_background": "#ffffff",
+      "newsletter_popup_text_color": "#1c1b1b",
+      "secondary_elements_background": "#5c5c5c",
+      "secondary_elements_text_color": "#ffffff",
+      "navigation_background": "#ffffff",
+      "navigation_text_color": "#5c5c5c",
+      "heading_font": "futura_n4",
+      "heading_size": "large",
+      "uppercase_heading": false,
+      "text_font": "century_gothic_n4",
+      "base_text_font_size": 15,
+      "show_page_transition": false,
+      "search_mode": "product,article",
+      "product_show_price_on_hover": true,
+      "product_show_secondary_image": false,
+      "product_info_alignment": "left",
+      "product_image_size": "natural",
+      "product_list_horizontal_spacing": "small",
+      "product_list_vertical_spacing": "small",
+      "cart_type": "drawer",
+      "cart_enable_notes": true,
+      "cart_show_free_shipping_threshold": false,
+      "cart_free_shipping_threshold": "50",
+      "checkout_logo_position": "center",
+      "checkout_logo_size": "small",
+      "checkout_body_background_color": "#fff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_color": "#fafafa",
+      "checkout_accent_color": "#323232",
+      "checkout_button_color": "#5c5c5c",
+      "sections": {
+        "sidebar-menu": {
+          "type": "sidebar-menu",
+          "settings": {
+            "primary_menu": "main-menu",
+            "show_social_media": true
+          }
+        },
+        "announcement": {
+          "type": "announcement",
+          "settings": {
+            "background": "#f3f3f3",
+            "text_color": "#5c5c5c",
+            "content": "Announce something here"
+          }
+        },
+        "header": {
+          "type": "header",
+          "settings": {
+            "use_sticky_header": true,
+            "logo_max_width": 140,
+            "navigation_menu": "main-menu",
+            "navigation_style": "center",
+            "enable_transparent_header": true,
+            "transparent_text_color": "#ffffff"
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "footer-0": {
+              "type": "text",
+              "settings": {
+                "title": "About the shop",
+                "content": "<p>Use this text area to tell your customers about your brand and vision. You can change it in the theme settings.<\/p>",
+                "show_social_media": true
+              }
+            },
+            "footer-1": {
+              "type": "links",
+              "settings": {
+                "menu": "footer"
+              }
+            },
+            "footer-2": {
+              "type": "newsletter",
+              "settings": {
+                "title": "Newsletter",
+                "content": "<p>Subscribe to receive updates, access to exclusive deals, and more.<\/p>"
+              }
+            }
+          },
+          "block_order": [
+            "footer-0",
+            "footer-1",
+            "footer-2"
+          ],
+          "settings": {
+            "show_payment_methods": true
+          }
+        }
+      }
+    },
+    "Vogue": {
+      "heading_color": "#303030",
+      "text_color": "#303030",
+      "text_light_color": "#595959",
+      "link_color": "#000000",
+      "background": "#ffffff",
+      "light_background": "#ffffff",
+      "product_on_sale_color": "#f94c43",
+      "button_background": "#f5db8b",
+      "button_text_color": "#303030",
+      "header_background": "#ffffff",
+      "header_heading_color": "#303030",
+      "header_light_color": "#595959",
+      "footer_background": "#ffffff",
+      "footer_heading_color": "#303030",
+      "footer_text_color": "#595959",
+      "navigation_background": "#ffffff",
+      "navigation_text_color": "#303030",
+      "newsletter_popup_background": "#ffffff",
+      "newsletter_popup_text_color": "#303030",
+      "secondary_elements_background": "#fce7a8",
+      "secondary_elements_text_color": "#303030",
+      "heading_font": "din_neuzeit_grotesk_n3",
+      "heading_size": "small",
+      "uppercase_heading": true,
+      "text_font": "futura_n4",
+      "base_text_font_size": 14,
+      "show_page_transition": false,
+      "show_element_staggering": false,
+      "search_mode": "product,article",
+      "product_show_price_on_hover": true,
+      "product_show_secondary_image": false,
+      "product_info_alignment": "center",
+      "product_image_size": "natural",
+      "product_list_horizontal_spacing": "medium",
+      "product_list_vertical_spacing": "small",
+      "cart_type": "drawer",
+      "cart_enable_notes": true,
+      "cart_show_free_shipping_threshold": false,
+      "cart_free_shipping_threshold": "50",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "medium",
+      "checkout_body_background_color": "#fff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_color": "#fafafa",
+      "checkout_accent_color": "#a17c5e",
+      "checkout_button_color": "#454545",
+      "sections": {
+        "sidebar-menu": {
+          "type": "sidebar-menu",
+          "settings": {
+            "primary_menu": "main-menu",
+            "show_social_media": true
+          }
+        },
+        "announcement": {
+          "type": "announcement",
+          "settings": {
+            "background": "#f1e4d8",
+            "text_color": "#343434",
+            "content": "Announce something here"
+          }
+        },
+        "header": {
+          "type": "header",
+          "settings": {
+            "use_sticky_header": true,
+            "logo_max_width": 140,
+            "navigation_menu": "main-menu",
+            "navigation_style": "inline",
+            "enable_transparent_header": true,
+            "transparent_text_color": "#ffffff"
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "footer-0": {
+              "type": "text",
+              "settings": {
+                "title": "About the shop",
+                "content": "<p>Use this text area to tell your customers about your brand and vision. You can change it in the theme settings.<\/p>",
+                "show_social_media": true
+              }
+            },
+            "footer-1": {
+              "type": "links",
+              "settings": {
+                "menu": "footer"
+              }
+            },
+            "footer-2": {
+              "type": "newsletter",
+              "settings": {
+                "title": "Newsletter",
+                "content": "<p>Subscribe to receive updates, access to exclusive deals, and more.<\/p>"
+              }
+            }
+          },
+          "block_order": [
+            "footer-0",
+            "footer-1",
+            "footer-2"
+          ],
+          "settings": {
+            "show_payment_methods": true
+          }
+        }
+      }
+    }
+  }
+}

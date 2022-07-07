@@ -1,0 +1,91 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "product_meta": {
+          "type": "product_meta",
+          "settings": {
+            "show_vendor": true,
+            "show_sku": false,
+            "show_product_rating": false,
+            "show_taxes_included": false
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {
+            "show_label": false
+          }
+        },
+        "variant_selector": {
+          "type": "variant_selector",
+          "settings": {
+            "selector_mode": "dropdown",
+            "show_color_swatch": false,
+            "show_color_carousel": false,
+            "size_chart": ""
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_price_in_button": false,
+            "show_payment_button": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "75b366e4-4083-4ddc-a994-783ca862fb28": {
+          "type": "share_buttons",
+          "settings": {}
+        },
+        "fe29f309-8b11-4316-86e0-7e9f61e3faf1": {
+          "type": "store_pickup",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "product_meta",
+        "quantity_selector",
+        "variant_selector",
+        "buy_buttons",
+        "description",
+        "75b366e4-4083-4ddc-a994-783ca862fb28",
+        "fe29f309-8b11-4316-86e0-7e9f61e3faf1"
+      ],
+      "settings": {
+        "image_size": "medium",
+        "stack_images": true,
+        "show_thumbnails": true,
+        "enable_image_zoom": true,
+        "enable_video_looping": false
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "You may also like",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false
+      }
+    },
+    "recently-viewed-products": {
+      "type": "recently-viewed-products",
+      "settings": {
+        "title": "Recently viewed",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product-recommendations",
+    "recently-viewed-products"
+  ]
+}

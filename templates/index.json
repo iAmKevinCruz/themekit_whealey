@@ -1,0 +1,329 @@
+{
+  "sections": {
+    "slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "slide-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/EdgewoodFinalWeb-1007.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/EdgewoodFinalWeb-1007.jpg",
+            "apply_overlay": false,
+            "content_position": "bottomLeft",
+            "subheading": "Comforts of Home",
+            "title": "Bed & bath Collection",
+            "button_1_text": "Shop Now",
+            "button_1_link": "shopify:\/\/collections\/bed-bath",
+            "button_2_text": "",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide-0"
+      ],
+      "settings": {
+        "show_fullscreen": true,
+        "show_arrow": false,
+        "autoplay": true,
+        "cycle_speed": 5,
+        "text_color": "#ffffff",
+        "button_color": "#363636",
+        "button_background": "#ffffff"
+      }
+    },
+    "featured-collections": {
+      "type": "featured-collections",
+      "blocks": {
+        "featured-collection-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "new",
+            "title": "Shop the Latest",
+            "grid_items_count": 8,
+            "button_text": "View all products"
+          }
+        }
+      },
+      "block_order": [
+        "featured-collection-0"
+      ],
+      "settings": {
+        "title": "Featured collection",
+        "layout_mode": "grid",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false,
+        "grid_mobile_items_per_row": "2",
+        "grid_desktop_items_per_row": 4
+      }
+    },
+    "1651422305d03c4042": {
+      "type": "text-with-image",
+      "settings": {
+        "subheading": "curated homewares — Modern Heirlooms",
+        "title": "Whearley & Co.",
+        "image": "shopify:\/\/shop_images\/WCOFilm-123_1c54488f-d14b-4d18-b42f-c984f2ec79de.jpg",
+        "image_position": "right",
+        "content": "<p>Whearley & Co is a celebration of home as a reflection of your ever-unfolding story — full of life, with each new chapter adding patina and warmth.<\/p><p>Rooted in Northern California, we hope to add a touch of intentional, timeless design to your space wherever you may be.<\/p>",
+        "link_text": "Explore",
+        "link_url": "shopify:\/\/collections"
+      }
+    },
+    "collection-list": {
+      "type": "collection-list",
+      "blocks": {
+        "collection-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "bed-bath",
+            "image": "shopify:\/\/shop_images\/EdgewoodFinalWeb-1007.jpg",
+            "image_alignment": "center center",
+            "content_position": "bottomLeft",
+            "subheading": "calm & cozy",
+            "title": "Bed & Bath",
+            "button_text": "Shop",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        },
+        "collection-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image_alignment": "center center",
+            "content_position": "bottomLeft",
+            "subheading": "Sub-heading",
+            "title": "Collection name",
+            "button_text": "View products",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        },
+        "collection-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image_alignment": "center center",
+            "content_position": "bottomLeft",
+            "subheading": "Sub-heading",
+            "title": "Collection name",
+            "button_text": "View products",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        }
+      },
+      "block_order": [
+        "collection-0",
+        "collection-1",
+        "collection-2"
+      ],
+      "settings": {
+        "image_size": "normal",
+        "add_spacing": true,
+        "expand_collection": false,
+        "stack_on_mobile": true,
+        "text_color": "#ffffff",
+        "button_color": "#353535"
+      }
+    },
+    "featured-product": {
+      "type": "featured-product",
+      "disabled": true,
+      "blocks": {
+        "product-meta": {
+          "type": "product_meta",
+          "settings": {
+            "show_vendor": true,
+            "show_sku": false,
+            "show_product_rating": false,
+            "show_taxes_included": false
+          }
+        },
+        "share-buttons": {
+          "type": "share_buttons",
+          "settings": {}
+        },
+        "variant-selector": {
+          "type": "variant_selector",
+          "settings": {
+            "selector_mode": "dropdown",
+            "show_color_swatch": false,
+            "show_color_carousel": false,
+            "size_chart": ""
+          }
+        },
+        "buy-buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_price_in_button": false,
+            "show_payment_button": true
+          }
+        }
+      },
+      "block_order": [
+        "product-meta",
+        "share-buttons",
+        "variant-selector",
+        "buy-buttons"
+      ],
+      "settings": {
+        "subheading": "",
+        "title": "Featured product",
+        "show_headings_on_mobile": true,
+        "product": ""
+      }
+    },
+    "timeline": {
+      "type": "timeline",
+      "disabled": true,
+      "blocks": {
+        "item-0": {
+          "type": "item",
+          "settings": {
+            "apply_overlay": true,
+            "title": "2000",
+            "subheading": "Sub-heading",
+            "heading": "Heading",
+            "content": "<p>Add your own custom content to give more information about your store, availability details...<\/p>"
+          }
+        },
+        "item-1": {
+          "type": "item",
+          "settings": {
+            "apply_overlay": true,
+            "title": "2001",
+            "subheading": "Sub-heading",
+            "heading": "Heading",
+            "content": "<p>Add your own custom content to give more information about your store, availability details...<\/p>"
+          }
+        },
+        "item-2": {
+          "type": "item",
+          "settings": {
+            "apply_overlay": true,
+            "title": "2002",
+            "subheading": "Sub-heading",
+            "heading": "Heading",
+            "content": "<p>Add your own custom content to give more information about your store, availability details...<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "item-0",
+        "item-1",
+        "item-2"
+      ],
+      "settings": {
+        "text_color": "#ffffff"
+      }
+    },
+    "blog-posts": {
+      "type": "blog-posts",
+      "disabled": true,
+      "blocks": {
+        "blog-0": {
+          "type": "blog",
+          "settings": {
+            "blog": "news"
+          }
+        }
+      },
+      "block_order": [
+        "blog-0"
+      ],
+      "settings": {
+        "subheading": "",
+        "title": "Featured article",
+        "show_category": false,
+        "button_link": "",
+        "button_text": "View all articles"
+      }
+    },
+    "1651422630f63d25ea": {
+      "type": "text-with-image",
+      "settings": {
+        "subheading": "Pieces that live",
+        "title": "Whearley & Co Vintage",
+        "image": "shopify:\/\/shop_images\/WCOFilm-119.jpg",
+        "image_position": "left",
+        "content": "<p>Our vintage collection is a celebration of ease,  imperfection, and the beautiful patina of age. Each piece is sourced with intention by Natalie, thoughtfully selected to add textured warmth to your space. <\/p>",
+        "link_text": "Shop Vintage",
+        "link_url": "shopify:\/\/collections\/vintage"
+      }
+    },
+    "shop-the-look": {
+      "type": "shop-the-look",
+      "blocks": {
+        "look-0": {
+          "type": "look",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/WCOFilm-123.jpg",
+            "dot_style": "light",
+            "product_1": "the-escapist-candle",
+            "product_1_horizontal_position": 65,
+            "product_1_vertical_position": 87,
+            "product_2": "cotton-blanket-in-carmel",
+            "product_2_horizontal_position": 15,
+            "product_2_vertical_position": 82,
+            "product_3": "marble-grande-round-tray-1",
+            "product_3_horizontal_position": 70,
+            "product_3_vertical_position": 64
+          }
+        },
+        "look-1": {
+          "type": "look",
+          "settings": {
+            "dot_style": "light",
+            "product_1": "",
+            "product_1_horizontal_position": 25,
+            "product_1_vertical_position": 45,
+            "product_2": "",
+            "product_2_horizontal_position": 55,
+            "product_2_vertical_position": 30,
+            "product_3": "",
+            "product_3_horizontal_position": 65,
+            "product_3_vertical_position": 60
+          }
+        },
+        "dc6eeb93-653c-43e4-bccb-052fdda8ebca": {
+          "type": "look",
+          "settings": {
+            "dot_style": "light",
+            "product_1": "",
+            "product_1_horizontal_position": 15,
+            "product_1_vertical_position": 15,
+            "product_2": "",
+            "product_2_horizontal_position": 50,
+            "product_2_vertical_position": 50,
+            "product_3": "",
+            "product_3_horizontal_position": 85,
+            "product_3_vertical_position": 85
+          }
+        }
+      },
+      "block_order": [
+        "look-0",
+        "look-1",
+        "dc6eeb93-653c-43e4-bccb-052fdda8ebca"
+      ],
+      "settings": {
+        "subheading": "Shop",
+        "title": "Our looks",
+        "show_mobile_product_info": false
+      }
+    }
+  },
+  "order": [
+    "slideshow",
+    "featured-collections",
+    "1651422305d03c4042",
+    "collection-list",
+    "featured-product",
+    "timeline",
+    "blog-posts",
+    "1651422630f63d25ea",
+    "shop-the-look"
+  ]
+}
