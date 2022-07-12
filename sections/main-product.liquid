@@ -39,6 +39,90 @@
   })();
 </script>
 
+<script>
+  let optionValues = [];
+  let optionNames = []
+  {% for product_option in product.options_with_values %}
+    optionNames.push('{{ product_option.name }}');
+    {% for value in product_option.values %}
+        optionValues.push('{{ value }}');
+    {% endfor %}
+  {% endfor %}
+  console.log(optionNames);
+  console.log(optionValues);
+
+  // Create "window.Shoppad.apps.infiniteoptions" object if it doesn't already exist
+  "Shoppad.apps.infiniteoptions".split(".").reduce(function(o, x) { if (!o[x]) {o[x] ={};} return o[x] }, window);
+
+  // Define beforeReady callback
+  window.Shoppad.apps.infiniteoptions.beforeReady = function(subscribe) {
+    subscribe('appLoad', function(event) {
+      console.log('appLoad', event);
+    });
+            /*
+     * @param {object} event
+     * @param {string} event.detail.name The field name of the input.
+     * @param {string} event.detail.value The value of the input.
+     * @param {object} event.detail.element A jQuery object representing the element that added to the DOM (this is the parent <div> that wraps the input and label).
+     */
+    let selected = [];
+    subscribe('fieldChange', function(event) {
+      console.log("NEW EVENT TRIGGERED");
+      console.log('fieldChange', event.detail.name + ": " + event.detail.value); 
+      console.log('fieldChange', event.detail.name.split('_')[0]); 
+      // console.log('fieldChange', event); 
+      let name = event.detail.name.split('_')[0];
+      let nameValue = name + ":" + event.detail.value;
+      let variant = '';
+      if (selected.length > 0) {
+        let found = false;
+        console.log("Array has items");
+        for (let i = 0; i < selected.length; i++) {
+          const item = selected[i];
+          console.log(i+" item: " + item);
+          if (name == item.split(":")[0]) {
+            found = true;
+            console.log('Item Name Found!');
+            console.log('Before Splice:');
+            console.log(selected);
+            selected.splice(i, 1, nameValue);
+            console.log('After Splice:');
+            console.log(selected);
+            return
+          };
+        };
+        if (!found) {
+          console.log('Adding to Array in If not already there: ' + nameValue);
+          selected.push(nameValue);           
+        }
+      }else{
+        console.log('Adding to Array First Time: ' + nameValue);
+        selected.push(nameValue);
+      }
+      console.log("Values Selected: ");
+      console.log(selected);
+      {% for variant in product.variants %}
+        variant = {{variant.title | json}};
+        variant = variant.split(' / ');
+
+        // console.log(variant);
+      {% endfor %}
+    });
+  };
+  </script>
+  {% for product_option in product.options_with_values %}
+    <label>
+      {{ product_option.name }}
+      <select>
+        {% for value in product_option.values %}
+          <option {% if product_option.selected_value == value %}selected{% endif %}>
+            {{ value }}
+          </option>
+        {% endfor %}
+      </select>
+    </label>
+  {% endfor %}
+
 <section class="Product Product--{{ section.settings.image_size }}" data-section-id="{{ section.id }}" data-section-type="product" data-section-settings='{{ section_settings }}'>
   <div class="Product__Wrapper">
     {%- capture action_list_items -%}
@@ -421,6 +505,19 @@
             {%- unless has_ouputted_variant_selector -%}
               {%- comment -%}If for any reason the merchant has removed the variant selector block, we still output the ID here{%- endcomment -%}
               <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+{%- comment -%}
+<div class="no-js ProductForm__Option">
+  <div class="Select Select--primary">
+    {%- render 'icon' with 'select-arrow' -%}
+    
+    <select id="product-select-{{ product.id }}" name="id" title="Variant">
+      {%- for variant in product.variants -%}
+      <option {% if variant == selected_variant %}selected="selected"{% endif %} {% unless variant.available %}disabled="disabled"{% endunless %} value="{{ variant.id }}" data-sku="{{ variant.sku }}">{{ variant.title }} - {{ variant.price | money }}</option>
+      {%- endfor -%}
+    </select>
+  </div>
+</div>
+{%- endcomment -%}
             {%- endunless -%}
           {%- endform -%}
 
