@@ -50,13 +50,13 @@
       Object.defineProperty(target, descriptor.key, descriptor);
     }
   };
-
+  // CODE COPIED FROM THEME.JS SO THAT THE PRICE WILL UPDATE ON CHANGE OF INFINITE OPTIONS FIELDS
   function _createClass(Constructor, protoProps, staticProps) {
     if (protoProps) _defineProperties(Constructor.prototype, protoProps);
     if (staticProps) _defineProperties(Constructor, staticProps);
     return Constructor;
   };
-
+  // CODE COPIED FROM THEME.JS SO THAT THE PRICE WILL UPDATE ON CHANGE OF INFINITE OPTIONS FIELDS
   var Currency = /*#__PURE__*/ (function () {
     function Currency() {
       _classCallCheck(this, Currency);
@@ -152,7 +152,7 @@
 
     return Currency;
   })();
-
+  // CODE COPIED FROM THEME.JS SO THAT THE PRICE WILL UPDATE ON CHANGE OF INFINITE OPTIONS FIELDS
   function _updateHistoryState(variant) {
     if (!history.replaceState) {
       return;
@@ -172,7 +172,7 @@
     );
     console.log(newUrl);
   };
-
+  // CODE COPIED FROM THEME.JS SO THAT THE PRICE WILL UPDATE ON CHANGE OF INFINITE OPTIONS FIELDS
   function _updateProductPrices(newVariant, previousVariant) {
       var productMetaPrices = document.getElementsByClassName('ProductMeta__PriceList')[0],
         currencyFormat = window.theme.currencyCodeEnabled
@@ -250,6 +250,16 @@
   window.Shoppad.apps.infiniteoptions.beforeReady = function(subscribe) {
     subscribe('appLoad', function(event) {
       // console.log('appLoad', event.details.fields);
+      function selectArrow(){
+      const parent = document.getElementsByClassName("spb-select");
+      const arrow = '<svg class="Icon Icon--select-arrow " viewBox="0 0 19 12"><polyline fill="none" stroke="currentColor" points="17 2 9.5 10 2 2" fill-rule="evenodd" stroke-width="2" stroke-linecap="square"></polyline></svg>';
+      for (let i = 0; i < parent.length; i++) {
+        const item = parent[i];
+        // item.appendChild(arrow);
+        item.firstElementChild.outerHTML+=(arrow);
+      }
+    }
+    // selectArrow();
     });
     /*
      * @param {object} event
@@ -333,6 +343,10 @@
 
     });
   };
+
+
+
+
 </script>
 
 <section class="Product Product--{{ section.settings.image_size }}" data-section-id="{{ section.id }}" data-section-type="product" data-section-settings='{{ section_settings }}'>
@@ -550,8 +564,8 @@
       PRODUCT TABS
       --------------------------------------------------------------------------------------------------------------------
       {%- endcomment -%}
-
       {%- render 'product-tabs' -%}
+
 
       {%- comment -%}
       --------------------------------------------------------------------------------------------------------------------
@@ -587,9 +601,14 @@
               {{ form | payment_terms }}
             {% endunless %}
             {%- render 'product-data', product: product -%}
-
+            
             {%- for block in section.blocks -%}
-              {%- case block.type -%}
+            {%- case block.type -%}
+            
+              {%- when 'content_custom' -%}
+                {%- render 'product-tabs-modified' -%}
+
+                
                 {%- when '@app' -%}
                   {%- render block -%}
 
@@ -975,6 +994,53 @@ This is the root container for the zoom functionality. Must not be removed, as o
     },
     {
       "type": "@app"
+    },
+    {
+      "name": "Custom Content",
+      "type": "content_custom",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Include this block for the custom black 'Custom Tabs' and 'Custom Reviews' to show and properly work."
+        }
+      ]
+    },
+    {
+      "name": "Custom Content - Tabs",
+      "type": "custom_tabs",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "'Custom Content' must be included for these blocks to show. These blocks will all appear grouped together, no matter how it's arranged on the editor. In order to move the group of tabs together, move the 'Custom Content' block."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        },
+        {
+          "type": "page",
+          "id": "page",
+          "label": "Content from page",
+          "info": "If specified, takes precedence over inline content."
+        }
+      ]
+    },
+    {
+      "name": "Custom Content - Reviews",
+      "type": "reviews_custom",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "To show reviews, install [Shopify Product Reviews](https://apps.shopify.com/product-reviews). This content will show on the left part, below the product images. "
+        }
+      ]
     },
     {
       "name": "Content",
