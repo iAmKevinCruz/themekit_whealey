@@ -57,7 +57,7 @@
   // Define beforeReady callback
   window.Shoppad.apps.infiniteoptions.beforeReady = function(subscribe) {
     subscribe('appLoad', function(event) {
-      console.log('appLoad', event);
+      console.log('appLoad', event.details.fields);
     });
             /*
      * @param {object} event
@@ -66,44 +66,73 @@
      * @param {object} event.detail.element A jQuery object representing the element that added to the DOM (this is the parent <div> that wraps the input and label).
      */
     let selected = [];
+    let minSelected = [];
+
     subscribe('fieldChange', function(event) {
       console.log("NEW EVENT TRIGGERED");
-      console.log('fieldChange', event.detail.name + ": " + event.detail.value); 
-      console.log('fieldChange', event.detail.name.split('_')[0]); 
-      // console.log('fieldChange', event); 
+      console.log('fieldChange', event.detail.name + ": " + event.detail.value);
       let name = event.detail.name.split('_')[0];
+      let value = event.detail.value;
       let nameValue = name + ":" + event.detail.value;
-      let variant = '';
       if (selected.length > 0) {
         let found = false;
-        console.log("Array has items");
         for (let i = 0; i < selected.length; i++) {
           const item = selected[i];
-          console.log(i+" item: " + item);
           if (name == item.split(":")[0]) {
             found = true;
-            console.log('Item Name Found!');
-            console.log('Before Splice:');
-            console.log(selected);
             selected.splice(i, 1, nameValue);
-            console.log('After Splice:');
-            console.log(selected);
-            return
+            minSelected.splice(i, 1, value);
+            break
           };
         };
         if (!found) {
-          console.log('Adding to Array in If not already there: ' + nameValue);
           selected.push(nameValue);           
+          minSelected.push(value);
         }
       }else{
-        console.log('Adding to Array First Time: ' + nameValue);
         selected.push(nameValue);
+        minSelected.push(value);
       }
       console.log("Values Selected: ");
-      console.log(selected);
+      console.log("Selected: "+selected);
+      console.log("MinSelected: "+ minSelected);
+
+      let variant = '';
+      let foundBoth = false;
+      let found = 0;
       {% for variant in product.variants %}
         variant = {{variant.title | json}};
         variant = variant.split(' / ');
+
+        for (let i = 0; i < variant.length; i++) {
+          const variantItem = variant[i];
+          for (let j = 0; j < minSelected.length; j++) {
+            const selectedItem = minSelected[j];
+            if (selectedItem == variantItem){
+              console.log(variant);
+              console.log(minSelected);
+              console.log(selectedItem + ' = ' + variantItem);
+              found++
+              console.log('Found this many: ' + found);
+              break
+            }else{
+              console.log(selectedItem + ' != ' + variantItem);
+            };
+          }
+          if (found == 0){
+            break
+          }
+        };
+        if (found == 2) {
+          foundBoth = true;
+          found = 0;
+          console.log("FOUND IT!!! -> " + {{variant.title | json}});
+          console.log('{{ variant | json }}');
+          sessionStorage.setItem('url', '{{ variant.url }}');
+          sessionStorage.setItem('variant price', '{{ variant.price }}');
+        }else{
+          found = 0;
+        }
 
         // console.log(variant);
       {% endfor %}
