@@ -12,6 +12,10 @@
             "show_taxes_included": false
           }
         },
+        "d15165c6-2cc8-48e8-86a2-4edcedd463f5": {
+          "type": "shopify:\/\/apps\/infinite-options\/blocks\/app-block\/7e73b6f9-82b0-45f5-9b9b-04f446ba1a9b",
+          "settings": {}
+        },
         "quantity_selector": {
           "type": "quantity_selector",
           "settings": {
@@ -20,9 +24,10 @@
         },
         "variant_selector": {
           "type": "variant_selector",
+          "disabled": true,
           "settings": {
             "selector_mode": "dropdown",
-            "show_color_swatch": false,
+            "show_color_swatch": true,
             "show_color_carousel": false,
             "size_chart": ""
           }
@@ -49,6 +54,7 @@
       },
       "block_order": [
         "product_meta",
+        "d15165c6-2cc8-48e8-86a2-4edcedd463f5",
         "quantity_selector",
         "variant_selector",
         "buy_buttons",

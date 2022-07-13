@@ -40,16 +40,168 @@
 </script>
 
 <script>
-  let optionValues = [];
-  let optionNames = []
-  {% for product_option in product.options_with_values %}
-    optionNames.push('{{ product_option.name }}');
-    {% for value in product_option.values %}
-        optionValues.push('{{ value }}');
-    {% endfor %}
-  {% endfor %}
-  console.log(optionNames);
-  console.log(optionValues);
+  // CODE COPIED FROM THEME.JS SO THAT THE PRICE WILL UPDATE ON CHANGE OF INFINITE OPTIONS FIELDS
+  function _defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  };
+
+  function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
+  };
+
+  var Currency = /*#__PURE__*/ (function () {
+    function Currency() {
+      _classCallCheck(this, Currency);
+    }
+
+    _createClass(Currency, null, [
+      {
+        key: "formatMoney",
+        value:
+          /**
+           * Format money values based on your shop currency settings
+           *
+           * @param  {Number|string} cents - value in cents or dollar amount e.g. 300 cents or 3.00 dollars
+           * @param  {String} format - shop money_format setting
+           * @return {String} value - formatted value
+           */
+          function formatMoney(cents, format) {
+            if (typeof cents === "string") {
+              cents = cents.replace(".", "");
+            }
+
+            var placeholderRegex = /\{\{\s*(\w+)\s*\}\}/,
+              formatString = format || "${{amount}}";
+
+            function defaultTo(value, defaultValue) {
+              return value == null || value !== value ? defaultValue : value;
+            }
+
+            function formatWithDelimiters(
+              number,
+              precision,
+              thousands,
+              decimal
+            ) {
+              precision = defaultTo(precision, 2);
+              thousands = defaultTo(thousands, ",");
+              decimal = defaultTo(decimal, ".");
+
+              if (isNaN(number) || number == null) {
+                return 0;
+              }
+
+              number = (number / 100.0).toFixed(precision);
+              var parts = number.split("."),
+                dollarsAmount = parts[0].replace(
+                  /(\d)(?=(\d\d\d)+(?!\d))/g,
+                  "$1" + thousands
+                ),
+                centsAmount = parts[1] ? decimal + parts[1] : "";
+              return dollarsAmount + centsAmount;
+            }
+
+            var value = "";
+
+            switch (formatString.match(placeholderRegex)[1]) {
+              case "amount":
+                value = formatWithDelimiters(cents, 2);
+                break;
+
+              case "amount_no_decimals":
+                value = formatWithDelimiters(cents, 0);
+                break;
+
+              case "amount_with_space_separator":
+                value = formatWithDelimiters(cents, 2, " ", ".");
+                break;
+
+              case "amount_no_decimals_with_comma_separator":
+                value = formatWithDelimiters(cents, 0, ",", ".");
+                break;
+
+              case "amount_no_decimals_with_space_separator":
+                value = formatWithDelimiters(cents, 0, " ");
+                break;
+
+              case "amount_with_comma_separator":
+                value = formatWithDelimiters(cents, 2, ".", ",");
+                break;
+            }
+
+            if (formatString.indexOf("with_comma_separator") !== -1) {
+              return formatString
+                .replace(placeholderRegex, value)
+                .replace(",00", "");
+            } else {
+              return formatString
+                .replace(placeholderRegex, value)
+                .replace(".00", "");
+            }
+          },
+      },
+    ]);
+
+    return Currency;
+  })();
+
+  function _updateProductPrices(newVariant, previousVariant) {
+      var productMetaPrices = document.getElementsByClassName('ProductMeta__PriceList')[0],
+        currencyFormat = window.theme.currencyCodeEnabled
+          ? window.theme.moneyWithCurrencyFormat
+          : window.theme.moneyFormat;
+
+      if (!productMetaPrices) {
+        return;
+      }
+
+      if (!newVariant) {
+        productMetaPrices.style.display = "none";
+      } else {
+        if (
+          previousVariant &&
+          previousVariant["price"] === newVariant["price"] &&
+          previousVariant["compare_at_price"] ===
+            newVariant["compare_at_price"]
+        ) {
+          return; // The price do not have changed so let's return to avoid changing the DOM for nothing
+        }
+
+        productMetaPrices.innerHTML = "";
+
+        if (newVariant["compare_at_price"] > newVariant["price"]) {
+          productMetaPrices.innerHTML +=
+            '<span class="ProductMeta__Price Price Price--highlight Text--subdued u-h4" data-money-convertible>'.concat(
+              Currency.formatMoney(newVariant["price"], currencyFormat),
+              "</span>"
+            );
+          productMetaPrices.innerHTML +=
+            '<span class="ProductMeta__Price Price Price--compareAt Text--subdued u-h4" data-money-convertible>'.concat(
+              Currency.formatMoney(
+                newVariant["compare_at_price"],
+                currencyFormat
+              ),
+              "</span>"
+            );
+        } else {
+          productMetaPrices.innerHTML +=
+            '<span class="ProductMeta__Price Price Text--subdued u-h4" data-money-convertible>'.concat(
+              Currency.formatMoney(newVariant["price"], currencyFormat),
+              "</span>"
+            );
+        }
+
+        productMetaPrices.style.display = "";
+      }
+    };
 
   // Create "window.Shoppad.apps.infiniteoptions" object if it doesn't already exist
   "Shoppad.apps.infiniteoptions".split(".").reduce(function(o, x) { if (!o[x]) {o[x] ={};} return o[x] }, window);
@@ -57,25 +209,32 @@
   // Define beforeReady callback
   window.Shoppad.apps.infiniteoptions.beforeReady = function(subscribe) {
     subscribe('appLoad', function(event) {
-      console.log('appLoad', event.details.fields);
+      // console.log('appLoad', event.details.fields);
     });
-            /*
+    /*
      * @param {object} event
      * @param {string} event.detail.name The field name of the input.
      * @param {string} event.detail.value The value of the input.
      * @param {object} event.detail.element A jQuery object representing the element that added to the DOM (this is the parent <div> that wraps the input and label).
      */
+
+     // THE SELECTED ARRAY WILL CONTAIN THE NAME+VALUE PER INDEX. THE MINSELECTED ARRAY WILL ONLY CONTAIN THE VALUES TO BE USED TO COMPARE WITH THE LIST OF VARIANTS FOR THE PRODUCT
     let selected = [];
     let minSelected = [];
 
-    subscribe('fieldChange', function(event) {
-      console.log("NEW EVENT TRIGGERED");
-      console.log('fieldChange', event.detail.name + ": " + event.detail.value);
+    // THIS FUNCTION WILL BE USED ON THE FIELDLOAD AND FIELDCHANGE SUBSCRIPTIONS
+    function setSelectedOptions(event){
       let name = event.detail.name.split('_')[0];
       let value = event.detail.value;
       let nameValue = name + ":" + event.detail.value;
+      // IF THERE IS NO VALUE FOR THE OPTION, EXIT FROM THE FN W/O PUSHING THE OPTION TO THE ARRAY
+      if (value == null || !value || value == ''){
+        return
+      };
+      // IF THE ARRAY OF SELECTIONS IS ALREADY POPULATED, CONTINUE
       if (selected.length > 0) {
         let found = false;
+        // WE WILL LOOP THROUGH THE ARRAY AND COMPARE THE VALUE SELECTED ON SCREEN VS THE VALUES IN THE ARRAY. IF THE NAME OF THE SELECTED ONSCREEN OPTION/FIELD IS ALREADY IN THE ARRAY, THEN THE VALUE FOR THAT FIELD WILL BE REPLACED IN BOTH ARRAYS. THIS ENSURES THAT THE ARRAY STAY WITH A LENGTH EQUAL TO THE NUMBER OF FIELDS TO CHOOSE FROM
         for (let i = 0; i < selected.length; i++) {
           const item = selected[i];
           if (name == item.split(":")[0]) {
@@ -93,13 +252,19 @@
         selected.push(nameValue);
         minSelected.push(value);
       }
-      console.log("Values Selected: ");
-      console.log("Selected: "+selected);
-      console.log("MinSelected: "+ minSelected);
+    };
+
+    subscribe('fieldLoad', function(event) {
+      setSelectedOptions(event);
+    });
+
+    subscribe('fieldChange', function(event) {
+      setSelectedOptions(event);
 
       let variant = '';
-      let foundBoth = false;
       let found = 0;
+
+      // WE WILL LOOP THROUGH ALL THE VARIANTS OF THE PRODUCT AND FIND THE ONE THAT MATCHES WITH THE SELECTIONS ONSCREEN
       {% for variant in product.variants %}
         variant = {{variant.title | json}};
         variant = variant.split(' / ');
@@ -109,48 +274,37 @@
           for (let j = 0; j < minSelected.length; j++) {
             const selectedItem = minSelected[j];
             if (selectedItem == variantItem){
-              console.log(variant);
-              console.log(minSelected);
-              console.log(selectedItem + ' = ' + variantItem);
               found++
-              console.log('Found this many: ' + found);
               break
-            }else{
-              console.log(selectedItem + ' != ' + variantItem);
-            };
-          }
+            }
+          };
           if (found == 0){
             break
           }
         };
         if (found == 2) {
-          foundBoth = true;
           found = 0;
-          console.log("FOUND IT!!! -> " + {{variant.title | json}});
-          console.log('{{ variant | json }}');
-          sessionStorage.setItem('url', '{{ variant.url }}');
-          sessionStorage.setItem('variant price', '{{ variant.price }}');
+          _updateProductPrices({{variant | json}}, {{product.selected_variant | json}});
         }else{
           found = 0;
         }
-
-        // console.log(variant);
       {% endfor %}
+
+      var newUrl = ""
+            .concat(window.location.protocol, "//")
+            .concat(window.location.host)
+            .concat(sessionStorage.getItem('url'))
+          window.history.replaceState(
+            {
+              path: newUrl,
+            },
+            "",
+            newUrl
+          );
+
     });
   };
-  </script>
-  {% for product_option in product.options_with_values %}
-    <label>
-      {{ product_option.name }}
-      <select>
-        {% for value in product_option.values %}
-          <option {% if product_option.selected_value == value %}selected{% endif %}>
-            {{ value }}
-          </option>
-        {% endfor %}
-      </select>
-    </label>
-  {% endfor %}
+</script>
 
 <section class="Product Product--{{ section.settings.image_size }}" data-section-id="{{ section.id }}" data-section-type="product" data-section-settings='{{ section_settings }}'>
   <div class="Product__Wrapper">

@@ -97,6 +97,29 @@
       {% endif %}
     </script>
 
+{%- comment -%}
+<script>
+  // Create "window.Shoppad.apps.infiniteoptions" object if it doesn't already exist
+  "Shoppad.apps.infiniteoptions".split(".").reduce(function(o, x) { if (!o[x]) {o[x] ={};} return o[x] }, window);
+  
+  // Define beforeReady callback
+  window.Shoppad.apps.infiniteoptions.beforeReady = function(subscribe) {
+    subscribe('appLoad', function(event) {
+      console.log('appLoad', event);
+    });
+    /*
+    * @param {object} event
+    * @param {string} event.detail.name The field name of the input.
+    * @param {string} event.detail.value The value of the input.
+    * @param {object} event.detail.element A jQuery object representing the element that added to the DOM (this is the parent <div> that wraps the input and label).
+      */
+      subscribe('fieldChange', function(event) {
+        console.log('fieldChange', event.detail.name + ": " + event.detail.value); 
+      });
+    };
+  </script>
+  {%- endcomment -%}
+  
     <script src="{{ 'lazysizes.min.js' | asset_url }}" async></script>
 
     {%- if template == 'customers/addresses' -%}
