@@ -6,7 +6,7 @@
         "show_collection_info": true,
         "show_collection_image": true,
         "apply_overlay": true,
-        "show_color_swatch": false,
+        "show_color_swatch": true,
         "show_vendor": false,
         "collection_image_size": "small",
         "show_sort_by": true,

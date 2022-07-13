@@ -684,7 +684,6 @@
                   {%- else -%}
                     {%- assign use_primary_button = false -%}
                   {%- endif -%}
-  <!-- <div id="hulkapps_custom_options_{{ product.id }}"> </div>    -->
                   <div class="ProductForm__BuyButtons" {{ block.shopify_attributes }}>
                     {%- if block.settings.show_payment_button and product.selected_or_first_available_variant.available == false -%}
                       <style>

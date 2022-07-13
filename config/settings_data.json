@@ -225,11 +225,6 @@
         "type": "shopify:\/\/apps\/back-in-stock-restock-alerts\/blocks\/app-embed\/f9b8be85-a2cb-4a08-bbf7-00616585fc16",
         "disabled": false,
         "settings": {}
-      },
-      "10042746950867549768": {
-        "type": "shopify:\/\/apps\/hulk-product-options\/blocks\/app-embed\/380168ef-9475-4244-a291-f66b189208b5",
-        "disabled": false,
-        "settings": {}
       }
     }
   },

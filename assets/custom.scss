@@ -6,6 +6,9 @@
     padding: 10px 28px 10px 14px;
     // border: 1px solid var(--border-color);
 }
+#infiniteoptions-container{
+    margin-bottom: 25px;
+}
 #infiniteoptions-container select{
     width: 100%;
     background: none;
@@ -19,7 +22,6 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-
 }
 .spb-label-tooltip{
     margin-top: 5px;
@@ -31,4 +33,9 @@ select::-ms-expand {
     #infiniteoptions-container select{
         background-position: 97%
     }
+}
+
+// CUSTOM PRODUCT TABS BLOCK
+.Product__Tabs{
+    margin: 25px 0;
 }
