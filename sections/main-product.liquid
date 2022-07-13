@@ -153,6 +153,26 @@
     return Currency;
   })();
 
+  function _updateHistoryState(variant) {
+    if (!history.replaceState) {
+      return;
+    }
+
+    var newUrl = ""
+      .concat(window.location.protocol, "//")
+      .concat(window.location.host)
+      .concat(window.location.pathname, "?variant=")
+      .concat(variant.id);
+    window.history.replaceState(
+      {
+        path: newUrl,
+      },
+      "",
+      newUrl
+    );
+    console.log(newUrl);
+  };
+
   function _updateProductPrices(newVariant, previousVariant) {
       var productMetaPrices = document.getElementsByClassName('ProductMeta__PriceList')[0],
         currencyFormat = window.theme.currencyCodeEnabled
@@ -200,6 +220,26 @@
         }
 
         productMetaPrices.style.display = "";
+
+        var masterSelector = document.getElementById(
+        "product-select-{{product.id}}");
+        console.log("masterSelector");
+        console.log(masterSelector);
+        console.log({{product.id}});
+
+        // We need to modify the hidden select that contain the id attribute as well
+
+        masterSelector
+              .querySelector("[selected]")
+              .removeAttribute("selected");
+        masterSelector
+              .querySelector('[value="'.concat(newVariant["id"], '"]'))
+              .setAttribute("selected", "selected");
+        masterSelector.dispatchEvent(
+              new Event("change", {
+                bubbles: true,
+              })
+            );
       }
     };
 
@@ -285,22 +325,11 @@
         if (found == 2) {
           found = 0;
           _updateProductPrices({{variant | json}}, {{product.selected_variant | json}});
+          _updateHistoryState({{variant | json}});
         }else{
           found = 0;
         }
       {% endfor %}
-
-      var newUrl = ""
-            .concat(window.location.protocol, "//")
-            .concat(window.location.host)
-            .concat(sessionStorage.getItem('url'))
-          window.history.replaceState(
-            {
-              path: newUrl,
-            },
-            "",
-            newUrl
-          );
 
     });
   };
@@ -636,7 +665,7 @@
                   {%- else -%}
                     {%- assign use_primary_button = false -%}
                   {%- endif -%}
-  <div id="hulkapps_custom_options_{{ product.id }}"> </div>   
+  <!-- <div id="hulkapps_custom_options_{{ product.id }}"> </div>    -->
                   <div class="ProductForm__BuyButtons" {{ block.shopify_attributes }}>
                     {%- if block.settings.show_payment_button and product.selected_or_first_available_variant.available == false -%}
                       <style>

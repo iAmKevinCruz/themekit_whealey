@@ -2689,6 +2689,8 @@
         key: "_onVariantChanged",
         value: function _onVariantChanged(event) {
           var _this = this;
+          console.log("_onVariantChanged Event");
+          console.log(event.detail.variant);
 
           var selectedVariant = event.detail.variant,
             imageWrapperElements = this.element.querySelectorAll(
