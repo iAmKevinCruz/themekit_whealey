@@ -20,6 +20,7 @@
         },
         "d15165c6-2cc8-48e8-86a2-4edcedd463f5": {
           "type": "shopify:\/\/apps\/infinite-options\/blocks\/app-block\/7e73b6f9-82b0-45f5-9b9b-04f446ba1a9b",
+          "disabled": true,
           "settings": {}
         },
         "variant_selector": {
@@ -62,11 +63,27 @@
             "page": ""
           }
         },
-        "6e9c528a-f1e3-4d76-9bb1-2aac67961590": {
+        "0ce83aeb-ad11-4cc8-b3a4-cf8f5c14de19": {
           "type": "custom_tabs",
           "settings": {
-            "title": "Care Instructions",
-            "content": "<p>{{ product.metafields.custom.care_instructions | metafield_tag }}<\/p>",
+            "title": "Complementary Colors",
+            "content": "<p>{{ product.metafields.custom.complementary_colors | metafield_tag }}<\/p>",
+            "page": ""
+          }
+        },
+        "a56f56aa-37e6-409c-bda1-697376d3e67e": {
+          "type": "custom_tabs",
+          "settings": {
+            "title": "Application",
+            "content": "<p>For best results and ease of application, we recommend using Farrow & Ball wallpaper paste. It comes in powder form in a recyclable tube that doubles up as a measuring jug, making mixing and maintaining an even consistency easier. Each tube can be used to hang five rolls of wallpaper.<\/p>",
+            "page": ""
+          }
+        },
+        "d54798b5-77f8-4110-ad71-bd9550f10ca8": {
+          "type": "custom_tabs",
+          "settings": {
+            "title": "Shipping & Returns",
+            "content": "<p>Please note that delivery times are estimates only and are not guaranteed, due to circumstances out of our control. Please bear this in mind when arranging appointments for decorators.<\/p><p>Wallpaper is made to order and will be delivered within 10 - 12 working days. Please allow up to 15 working days for archived wallpapers.<\/p><p>We are sorry that we cannot accept wallpaper, archive colors, special orders for refund or exchange.<\/p>",
             "page": ""
           }
         }
@@ -82,7 +99,9 @@
         "75b366e4-4083-4ddc-a994-783ca862fb28",
         "fe29f309-8b11-4316-86e0-7e9f61e3faf1",
         "8b69daad-d720-4619-83ce-ddc5393721a3",
-        "6e9c528a-f1e3-4d76-9bb1-2aac67961590"
+        "0ce83aeb-ad11-4cc8-b3a4-cf8f5c14de19",
+        "a56f56aa-37e6-409c-bda1-697376d3e67e",
+        "d54798b5-77f8-4110-ad71-bd9550f10ca8"
       ],
       "settings": {
         "image_size": "medium",

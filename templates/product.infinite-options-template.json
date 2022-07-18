@@ -24,7 +24,6 @@
         },
         "variant_selector": {
           "type": "variant_selector",
-          "disabled": true,
           "settings": {
             "selector_mode": "dropdown",
             "show_color_swatch": true,
@@ -43,10 +42,6 @@
           "type": "description",
           "settings": {}
         },
-        "75b366e4-4083-4ddc-a994-783ca862fb28": {
-          "type": "share_buttons",
-          "settings": {}
-        },
         "fe29f309-8b11-4316-86e0-7e9f61e3faf1": {
           "type": "store_pickup",
           "settings": {}
@@ -58,21 +53,37 @@
         "8b69daad-d720-4619-83ce-ddc5393721a3": {
           "type": "custom_tabs",
           "settings": {
-            "title": "Details & Dimensions",
-            "content": "<p>{{ product.metafields.custom.details_dimensions | metafield_tag }}<\/p>",
+            "title": "Selecting Your Finish",
+            "content": "<p>From walls, floors and ceilings to furniture, baseboards and sheds, Farrow & Ball's range of eco-friendly paint finishes can help you transform almost any surface in your home (and outside it, too).<\/p><p>Need help deciding on the perfect finish for your project?<\/p><p><a href=\"https:\/\/whearleyandco.com\/farrow-ball-finishes-product-info\/\" target=\"_blank\"><span style=\"text-decoration:underline\">Help with Finishes & Additional Product Information<\/span><\/a><\/p><p>*Note: 100mL Sample Pots are only available in Estate Emulsion<\/p>",
             "page": ""
           }
         },
         "6e9c528a-f1e3-4d76-9bb1-2aac67961590": {
           "type": "custom_tabs",
           "settings": {
-            "title": "Care Instructions",
-            "content": "<p>{{ product.metafields.custom.care_instructions | metafield_tag }}<\/p>",
+            "title": "Complementary Colors",
+            "content": "<p>{{ product.metafields.custom.complementary_colors | metafield_tag }}<\/p>",
             "page": ""
           }
         },
-        "f3713fe8-80d2-491e-923b-6a6cfcc405a9": {
-          "type": "reviews_custom",
+        "eca05851-7ab6-49dd-8c70-84d1a6e3d4d5": {
+          "type": "custom_tabs",
+          "settings": {
+            "title": "The Farrow & Ball System",
+            "content": "<p>For a covetable and long-lasting finish, we recommend following our simple three coat paint system:<\/p><p>One coat of our Primer & Undercoat in the recommended tone.<\/p><p><em>Our Primers & Undercoats are formulated with the same highest quality ingredients as our paint, helping you create a rich and lasting finish - even on difficult surfaces. <\/em><\/p><p>Two coats of your selected color to build up an extraordinary depth.<\/p><p><em>Our paint is blended with only the highest quality ingredients and richest pigment levels to closely guarded formulations. It’s what gives our hues an unmatchable depth and exceptional coverage. <\/em><\/p><p>As one of the first to offer a 100% water based range, Farrow & Ball paints are low odor, eco-friendly and safe to use in every room of your home. A water base ensures our paint is easy to apply and dries in just two hours - simply wash brushes with warm soapy water after use.<\/p>",
+            "page": ""
+          }
+        },
+        "7d82d5f3-5531-43af-951b-caa2ca520a3a": {
+          "type": "custom_tabs",
+          "settings": {
+            "title": "Shipping & Returns",
+            "content": "<p>Please note that delivery times are estimates only and are not guaranteed, due to circumstances out of our control. Please bear this in mind when arranging appointments for decorators.<\/p><p>Paint orders will be delivered within 3 - 5 working days. In stock items are available for same day store pickup. <\/p><p>Returns of unopened and re-saleable items will be accepted for refund or exchange, less a 25% restocking fee within 14 days of purchase, if accompanied by a valid proof of purchase.<\/p><p>We are sorry that we cannot accept sample pots, wallpaper, archive colors, special orders for refund or exchange.<\/p>",
+            "page": ""
+          }
+        },
+        "75b366e4-4083-4ddc-a994-783ca862fb28": {
+          "type": "share_buttons",
           "settings": {}
         }
       },
@@ -83,12 +94,13 @@
         "variant_selector",
         "buy_buttons",
         "description",
-        "75b366e4-4083-4ddc-a994-783ca862fb28",
         "fe29f309-8b11-4316-86e0-7e9f61e3faf1",
         "00cbc8b5-0d84-404f-8db2-22b9586371fe",
         "8b69daad-d720-4619-83ce-ddc5393721a3",
         "6e9c528a-f1e3-4d76-9bb1-2aac67961590",
-        "f3713fe8-80d2-491e-923b-6a6cfcc405a9"
+        "eca05851-7ab6-49dd-8c70-84d1a6e3d4d5",
+        "7d82d5f3-5531-43af-951b-caa2ca520a3a",
+        "75b366e4-4083-4ddc-a994-783ca862fb28"
       ],
       "settings": {
         "image_size": "medium",

@@ -1,9 +1,9 @@
 // INFINITE OPTIONS STYLING
 
 .infinite-option{
-    width: 100%;
-    background-color: black;
-    padding: 10px 28px 10px 14px;
+    // width: 100%;
+    // background-color: black;
+    // padding: 10px 28px 10px 14px;
     // border: 1px solid var(--border-color);
 }
 #infiniteoptions-container{
@@ -38,4 +38,9 @@ select::-ms-expand {
 // CUSTOM PRODUCT TABS BLOCK
 .Product__Tabs{
     margin: 25px 0;
+}
+
+// SHOP PAY INFO
+#shop-pay-container{
+    // transition: all .5s;
 }
