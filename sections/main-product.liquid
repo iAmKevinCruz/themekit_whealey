@@ -701,7 +701,7 @@
                       </style>
                     {%- endif -%}
 
-                    <button {% if block.settings.customColorOptions %}style="background-color: {{block.settings.background}}; opacity: {{block.settings.opacity}};"{% endif %} type="submit" data-use-primary-button="{% if use_primary_button %}true{% else %}false{% endif %}" class="ProductForm__AddToCart Button {% if product.selected_or_first_available_variant.available and use_primary_button %}Button--primary{% else %}Button--secondary{% endif %} Button--full" {% if product.selected_or_first_available_variant.available %}data-action="add-to-cart"{% else %}disabled="disabled"{% endif %}>
+                    <button {% if block.settings.customColorOptions %}style="background-color: {{block.settings.background}}; opacity: {{block.settings.opacity}}; color: {{block.settings.text_color}};"{% endif %} type="submit" data-use-primary-button="{% if use_primary_button %}true{% else %}false{% endif %}" class="ProductForm__AddToCart Button {% if product.selected_or_first_available_variant.available and use_primary_button %}Button--primary{% else %}Button--secondary{% endif %} Button--full" {% if product.selected_or_first_available_variant.available %}data-action="add-to-cart"{% else %}disabled="disabled"{% endif %}>
                       {%- if product.selected_or_first_available_variant.available -%}
                         <span>{% if product.template_suffix == 'pre-order' %}{{ 'product.form.pre_order' | t }}{% else %}{{ 'product.form.add_to_cart' | t }}{% endif %}</span>
 
@@ -881,7 +881,7 @@ This is the root container for the zoom functionality. Must not be removed, as o
           "id": "display_none",
           "label": "Make the variant selector invisible",
           "default": false,
-          "info": "Turn this off if you are going to use Infinite Options and don't want the variant selector visible."
+          "info": "Turn this on if you are going to use Infinite Options and don't want the stock variant selector visible."
         },
         {
           "type": "checkbox",
@@ -957,6 +957,12 @@ This is the root container for the zoom functionality. Must not be removed, as o
           "id": "background",
           "label": "Select background color for the Add To Cart button",
           "default": "#E1DFDC"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Select text color for the Add To Cart button",
+          "default": "#fff"
         },
         {
           "type": "range",
@@ -1037,7 +1043,7 @@ This is the root container for the zoom functionality. Must not be removed, as o
       "settings": [
         {
           "type": "paragraph",
-          "content": "Include this block for the custom black 'Custom Tabs' and 'Custom Reviews' to show and properly work."
+          "content": "Include this block for the custom blocks 'Custom Tabs' and 'Custom Reviews' to show and properly work. This block will control the location of the tabs, while moving the other tab blocks will rearrange the order that they appear in relation to each other."
         }
       ]
     },
